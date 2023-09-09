@@ -1,1 +1,9 @@
-<h1 align="center">Hello World!</h1>
+<h2 align="center">Welcome to Hilton Hotel!</h2>
+
+<div [ngSwitch]="role" >
+    <div *ngSwitchCase="'User'"> <h3> Welcome User </h3> </div>
+    <div *ngSwitchCase="'Admin'">
+        <app-rooms></app-rooms>
+    </div>
+    <div *ngSwitchDefault><h3>You Are not authorised to view rooms components.</h3></div>
+</div>
