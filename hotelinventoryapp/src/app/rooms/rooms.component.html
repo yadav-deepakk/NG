@@ -15,12 +15,15 @@
 ------------------------------------------------------------------------->
 <div *ngIf="!isRoomCountHidden">
   <div *ngIf="hotelAvailableRooms > 0">
-    <h3 align="center">
+    <h3
+    [ngStyle]="{'color':'green'}"
+      align="center"
+    >
       Available Room Count: {{ roomsInfo?.availbleCount ?? "No Rooms" }}
     </h3>
   </div>
 
-  <div *ngIf="roomsInfo && roomsInfo.availbleCount>0">
+  <div *ngIf="roomsInfo && roomsInfo.availbleCount > 0">
     <h4 align="center">Rooms List</h4>
     <table align="center" border="1">
       <thead>
@@ -37,11 +40,12 @@
       </thead>
       <tbody>
         <tr
+          [ngClass]="e ? 'even' : 'odd'"
           *ngFor="
             let room of roomsList;
             let i = index;
             let o = odd;
-            let e = even;
+            let e = even
           "
         >
           <td>{{ o ? "Odd" : "Even" }}</td>
