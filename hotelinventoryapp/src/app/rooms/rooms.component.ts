@@ -25,6 +25,7 @@ export class RoomsComponent implements OnInit {
       ammenities: 'string value 1',
       checkInTime: new Date("1/11/2023"),
       checkOutTime: new Date("12/11/2023"),
+      ratings: 3.550
     },
     {
       roomNumber: 112,
@@ -34,6 +35,7 @@ export class RoomsComponent implements OnInit {
       ammenities: 'string value 1343',
       checkInTime: new Date("1/11/2023"),
       checkOutTime: new Date("1/12/2023"),
+      ratings: 3.951
     },
     {
       roomNumber: 122,
@@ -43,6 +45,7 @@ export class RoomsComponent implements OnInit {
       ammenities: 'string value 1132',
       checkInTime: new Date("11/11/2023"),
       checkOutTime: new Date("12/11/2023"),
+      ratings: 4.0
     },
     {
       roomNumber: 116,
@@ -52,6 +55,7 @@ export class RoomsComponent implements OnInit {
       ammenities: 'string value 641',
       checkInTime: new Date("11/11/2023"),
       checkOutTime: new Date(12 - 11 - 2023),
+      ratings: 4.150
     },
   ];
 

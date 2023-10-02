@@ -12,4 +12,5 @@ export interface hotelRoom {
   ammenities: string;
   checkInTime: Date;
   checkOutTime: Date;
+  ratings: number;
 }

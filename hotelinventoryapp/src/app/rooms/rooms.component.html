@@ -15,20 +15,17 @@
 ------------------------------------------------------------------------->
 <div *ngIf="!isRoomCountHidden">
   <div *ngIf="hotelAvailableRooms > 0">
-    <h3
-    [ngStyle]="{'color':'green'}"
-      align="center"
-    >
+    <h3 [ngStyle]="{ color: 'green' }" align="center">
       Available Room Count: {{ roomsInfo?.availbleCount ?? "No Rooms" }}
     </h3>
   </div>
 
   <div *ngIf="roomsInfo && roomsInfo.availbleCount > 0">
     <h4 align="center">Rooms List</h4>
-    <table align="center" border="1">
+    <table class="table" border="1">
       <thead>
         <tr>
-          <th>Even or Odd</th>
+          <th>Even/Odd</th>
           <th>Index</th>
           <th>Room No.</th>
           <th>Room Type</th>
@@ -36,6 +33,7 @@
           <th>Photos</th>
           <th>CheckInTime</th>
           <th>Price</th>
+          <th>Rating</th>
         </tr>
       </thead>
       <tbody>
@@ -49,22 +47,24 @@
           "
         >
           <td>{{ o ? "Odd" : "Even" }}</td>
-          <td>{{ i }}</td>
+          <td>{{ i * 0.01 | percent }}</td>
           <td>{{ room.roomNumber }}</td>
           <td>{{ room.roomType }}</td>
-          <td>{{ room.ammenities }}</td>
+          <td>{{ room.ammenities | titlecase }}</td>
           <td>{{ room.photos }}</td>
-          <td>{{ room.checkInTime }}</td>
-          <td>{{ room.roomPrice }}</td>
+          <td>{{ room.checkInTime | date : "dd/mm/yyyy h:mm:ss" }}</td>
+          <td>{{ room.roomPrice | currency : "INR" }}</td>
+          <td>{{ room.ratings | number : "1.2-3" : "EN-US" }}</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<h2 align="center">
+<h6 align="center">
   <button
+    class="m-2"
     [innerText]="(isRoomCountHidden ? 'Reveal' : 'Hide') + ' Rooms Info'"
     (click)="toggle()"
   ></button>
-</h2>
+</h6>
