@@ -3,4 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #e8e8e8;
+    font-family: sans-serif, Arial;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
