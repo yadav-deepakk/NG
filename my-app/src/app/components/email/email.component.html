@@ -1,0 +1,45 @@
+<div class="form-container">
+  <h2>Compose an email</h2>
+
+  <form (ngSubmit)="onSendEmailFormSubmit()" class="compose-email-form">
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>To</mat-label>
+      <input
+        matInput
+        name="to"
+        [(ngModel)]="emailFormDataModel.to"
+        placeholder="emailid"
+      />
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Subject</mat-label>
+      <input
+        matInput
+        name="subject"
+        [(ngModel)]="emailFormDataModel.subject"
+        placeholder="Any suitable subject"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Mail body</mat-label>
+      <textarea
+        rows="12"
+        matInput
+        name="message"
+        [(ngModel)]="emailFormDataModel.message"
+        placeholder="Type your message here..."
+      ></textarea>
+    </mat-form-field>
+
+    <div class="button-group">
+      <button type="reset" mat-fab>
+        <mat-icon>refresh</mat-icon></button
+      ><button type="submit" color="primary" mat-fab>
+        <mat-icon>send</mat-icon>
+      </button>
+    </div>
+
+    <!-- {{ emailFormDataModel | json }} -->
+  </form>
+</div>

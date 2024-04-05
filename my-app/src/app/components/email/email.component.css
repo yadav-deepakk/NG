@@ -1,0 +1,19 @@
+.form-container {
+    text-align: center;
+}
+
+.compose-email-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.compose-email-form .form-field {
+    width: 50%;
+}
+
+.compose-email-form .button-group {
+    display: flex;
+    gap: 8px;
+}
