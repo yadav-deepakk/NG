@@ -11,6 +11,7 @@
         placeholder="emailid"
       />
     </mat-form-field>
+
     <mat-form-field class="form-field" appearance="outline">
       <mat-label>Subject</mat-label>
       <input
@@ -32,10 +33,18 @@
       ></textarea>
     </mat-form-field>
 
+    <mat-spinner *ngIf="isSendInProgress"></mat-spinner>
+
     <div class="button-group">
       <button type="reset" mat-fab>
-        <mat-icon>refresh</mat-icon></button
-      ><button type="submit" color="primary" mat-fab>
+        <mat-icon>refresh</mat-icon>
+      </button>
+      <button
+        type="submit"
+        color="primary"
+        mat-fab
+        [disabled]="isSendInProgress"
+      >
         <mat-icon>send</mat-icon>
       </button>
     </div>
